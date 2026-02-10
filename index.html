@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Invito speciale</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffdee9, #b5fffc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Riquadro centrale */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    border: 6px solid;
+    border-image: linear-gradient(45deg, red, orange, yellow, green, blue, violet) 1;
+}
+
+/* Titoli */
+h1, h2 {
+    color: #ff4da6;
+}
+
+/* Input e bottone */
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ffb3d9;
+    margin-top: 10px;
+    width: 80%;
+}
+
+button {
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Invito nascosto */
+#invito {
+    display: none;
+    margin-top: 30px;
+}
+
+/* Lista invitati */
+ol {
+    text-align: left;
+    margin-top: 15px;
+}
+
+/* Emoji decorative */
+.decor {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="decor">🌸🌈🎉🌼</div>
+
+<h2>Accesso al compleanno</h2>
+
+<p>Rispondi all'indovinello per scoprire l'invito:</p>
+
+<p>
+A volte chiedo il permesso per farle, le vostre case conoscono la mia fragranza,  
+a volte letali e silenziose a volte sono atomiche e rimbombanti.  
+A cosa mi riferisco?
+</p>
+
+<input type="text" id="risposta" placeholder="Inserisci risposta">
+<br>
+<button onclick="controlla()">Invia</button>
+
+<p id="errore" style="color:red;"></p>
+
+<div id="invito">
+    <h1>🎂 Sei invitato! 🎂</h1>
+    <p>Compleanno di <b>Gennaro</b></p>
+    <p>📅 Data: 20/02/2004</p>
+    <p>⏰ Ora: 19:00</p>
+    <p>📍 Via Gavia Marciana 8 (Pozzuoli)</p>
+
+    <h3>Invitati:</h3>
+    <ol>
+        <li>Alina Filippina</li>
+        <li>Manuela CostaConcordia D'Angelo</li>
+        <li>Luce dei miei occhi, la mia verità</li>
+        <li>Alessandra Magna</li>
+        <li>Paola e Claudio</li>
+        <li>Ke Kakatone</li>
+        <li>Francinciccina ageR</li>
+        <li>Lollo RioneTraiano</li>
+    </ol>
+
+    <div class="decor">🌼🎉🌈🌸</div>
+</div>
+
+</div>
+
+<script>
+function controlla() {
+    let risposta = document.getElementById("risposta").value.toLowerCase();
+
+    if (risposta === "scorregge") {
+        document.getElementById("invito").style.display = "block";
+        document.getElementById("errore").innerText = "";
+    } else {
+        document.getElementById("errore").innerText = "Risposta sbagliata, riprova!";
+    }
+}
+</script>
+
+</body>
+</html>
